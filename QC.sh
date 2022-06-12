@@ -1,0 +1,3 @@
+while read sample;do
+/data/software/java/jdk1.8.0_191/bin/java -jar -Xmx40g /data/software/Trimmomatic/0.38/trimmomatic-0.38.jar PE -threads 10 input/$sample/$sample.R1.fq.gz input/$sample/$sample.R2.fq.gz clean_data/$sample.R1.fq.gz clean_data/$sample.R1_un.fq.gz clean_data/$sample.R2.fq.gz  clean_data/$sample.R2_un.fq.gz  CROP:150 ILLUMINACLIP:adapters/TruSeq3-PE-2.fa:2:30:10:8:true LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:50
+done<sample.list
